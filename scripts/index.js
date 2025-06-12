@@ -4,13 +4,13 @@ import { images } from './images.js';
 
 let activeGroup = JSON.parse(localStorage.getItem('activeGroup'));
 
-let activeImg;
+/* let activeImg;
 let imgList = [];
 let isModalActive = false;
 let isInfoActive = false;
 let isHelpActive = false;
 let isVideoActive = false;
-
+ */
 // Generate content
 function generateContent () {
 
@@ -36,9 +36,17 @@ function generateContent () {
 					<div class="el-text-bl">${treatment}</div>
 					<div class="el-text-br">${availability}</div>
 				</div>
+
+				<!--
 				<div class="element-img">
-					<img width="2883" height="3840" src="images/${fileName}/${fileName}-0.jpg">
+					<img width="600" height="900" src="images/${fileName}/${fileName}-0.jpg">
 				</div>
+				-->
+
+				<picture class="element-img">
+					<source srcset="images/${fileName}/${fileName}-0.avif" width="600" height="900" type="image/avif">
+					<img src="images/${fileName}/${fileName}-0.jpg" width="600" height="900" type="image/jpeg">
+				</picture>
 			</a>
 		</div>
 		`
@@ -121,7 +129,7 @@ function renderEmpty(){
 
 
 // Update active image
-function updateActiveImg (direction) {
+/* function updateActiveImg (direction) {
 	if(direction === 'left'){
 		if(activeImg === 1) {
 				activeImg = imgList[activeGroup].length;
@@ -135,10 +143,10 @@ function updateActiveImg (direction) {
 			activeImg ++;
 		};
 	};
-};
+}; */
 
 // Scroll event
-function lockScroll() {
+/* function lockScroll() {
 	if(isModalActive || isInfoActive || isVideoActive || isHelpActive){
 		document.body.style.top = `-${window.scrollY}px`;
 		document.body.style.bottom = '0';
@@ -156,10 +164,10 @@ function lockScroll() {
 		window.scrollTo(0, parseInt(scrollY || '0') * -1);
 		document.body.style.paddingRight = '';
 	}
-}
+} */
 
 // Close active modal
-function removeModal() {
+/* function removeModal() {
 	document.querySelectorAll('.js-modal')
 		.forEach((modal) => {
 			modal.classList.remove("visibleFlex");
@@ -169,10 +177,10 @@ function removeModal() {
 			img.classList.remove("visibleBlock");
 		});
 	isModalActive = false;
-};
+}; */
 
 // Update active group
-function updateActiveGroup(direction) {
+/* function updateActiveGroup(direction) {
 	if(direction === 'down'){
 		if(activeGroup >= imgList.length - 1){
 			return;
@@ -190,10 +198,10 @@ function updateActiveGroup(direction) {
 			renderActiveImg();
 		};
 	};
-};
+}; */
 
 // Render active image
-function renderActiveImg () {
+/* function renderActiveImg () {
 
 	removeModal();
 
@@ -222,7 +230,7 @@ function renderActiveImg () {
 				};
 			});
 	isModalActive = true;
-};
+}; */
 
 
 // Img list Phone
@@ -231,7 +239,7 @@ let previousGroup;
 imgList.forEach((e) => {imgListPhone.push(e.length-1)}); */
 
 // Update active image Phone
-function updateActiveImgPhone (direction) {
+/* function updateActiveImgPhone (direction) {
 
 	// Check if group changed
 	if(previousGroup !== activeGroup){
@@ -253,10 +261,10 @@ function updateActiveImgPhone (direction) {
 			imgListPhone[activeGroup] ++;
 		};
 	};
-};
+}; */
 
 // Render active image Phone
-function renderActiveImgPhone() {
+/* function renderActiveImgPhone() {
 
 	const name = images[activeGroup].name
 	const counter = `${imgListPhone[activeGroup]}/${imgList[activeGroup].length}`
@@ -304,10 +312,10 @@ function renderActiveImgPhone() {
 		});
 	document.querySelector(`[data-img-subtitle-id="${activeGroup}"]`)
 		.innerHTML = subtitle;
-};
+}; */
 
 // Update modal text
-function updateModalText() {
+/* function updateModalText() {
 	const title = images[activeGroup].title || 'undefined';
 	const subtitle = images[activeGroup].subtitles[activeImg-1] || 'undefined';
 	// const number = activeImg === 1 ? '' : `${activeImg - 1} - `;
@@ -317,7 +325,7 @@ function updateModalText() {
 		.querySelector('.js-modal-title').innerHTML = title;
 	document.querySelector(`.js-modal-${activeGroup}`)
 		.querySelector('.js-modal-subtitle').innerHTML = number + subtitle;
-}
+} */
 
 // Open modal on click
 document.querySelectorAll('.js-img-main-container')
@@ -331,7 +339,7 @@ document.querySelectorAll('.js-img-main-container')
 	});
 
 // Open help on click
-document.querySelector('.js-breakdowns')
+/* document.querySelector('.js-breakdowns')
 	.addEventListener('click', () => {
 			if(window.matchMedia("(min-width: 620px)").matches && window.matchMedia("(min-height: 620px)").matches){
 				document.querySelector('.js-help')
@@ -339,15 +347,15 @@ document.querySelector('.js-breakdowns')
 				isHelpActive = true;
 				lockScroll();
 			}
-		});
+		}); */
 
 // Exit help on click out
-document.querySelector('.helpBG')
+/* document.querySelector('.helpBG')
 	.addEventListener('click', () => {
 		removeHelp();
-});
+}); */
 // Open info on click
-document.querySelectorAll('.js-headerInfo')
+/* document.querySelectorAll('.js-headerInfo')
 	.forEach((e) => {
 		e.addEventListener('click', () => {
 			document.querySelector('.js-info')
@@ -355,35 +363,35 @@ document.querySelectorAll('.js-headerInfo')
 			isInfoActive = true;
 			lockScroll();
 		});
-	})
+	}) */
 // Exit info on click out
-document.querySelector('.infoBG')
+/* document.querySelector('.infoBG')
 	.addEventListener('click', () => {
 		removeInfo();
-});
+}); */
 // Exit info on ctrl click
-document.querySelector('.js-infoClose')
+/* document.querySelector('.js-infoClose')
 	.addEventListener('click', () => {
 		removeInfo();
-});
+}); */
 
 
 
-function removeInfo() {
+/* function removeInfo() {
 	document.querySelector('.js-info')
 		.classList.remove("visibleFlex");
 	isInfoActive = false;
 	lockScroll();
-}
-function removeHelp() {
+} */
+/* function removeHelp() {
 	document.querySelector('.js-help')
 		.classList.remove("visibleFlex");
 	isHelpActive = false;
 	lockScroll();
-}
+} */
 
 // Open video on click
-document.querySelector('.js-reel-main-subtitle')
+/* document.querySelector('.js-reel-main-subtitle')
 	.addEventListener('click', () => {
 		if(window.matchMedia("(min-width: 620px)").matches && window.matchMedia("(min-height: 620px)").matches){
 			document.querySelector('.js-videoLocal')
@@ -395,20 +403,20 @@ document.querySelector('.js-reel-main-subtitle')
 		}else{
 			window.location.href = "https://www.youtube.com/watch?v=hUiwe61rIzE";
 		}
-});
+}); */
 // Exit video on click out
-document.querySelector('.js-videoBG')
+/* document.querySelector('.js-videoBG')
 	.addEventListener('click', () => {
 		removeVideo();
-});
+}); */
 // Exit video on ctrl click
-document.querySelector('.js-reelClose')
+/* document.querySelector('.js-reelClose')
 	.addEventListener('click', () => {
 		removeVideo();
-});
+}); */
 
 // Copy email on click
-let emailAlert;
+/* let emailAlert;
 document.querySelector('.js-email')
 	.addEventListener('click', async () => {
 		const email = document.querySelector('.js-email').innerHTML
@@ -422,17 +430,17 @@ document.querySelector('.js-email')
 			document.querySelector('.js-emailCopied')
 			.classList.remove('visibleBlock');
 		},600)
-	})
+	}) */
 
 
-function removeVideo() {
+/* function removeVideo() {
 	document.querySelector('video')
 		.pause();
 	document.querySelector('.js-videoLocal')
 		.classList.remove("visibleFlex");
 	isVideoActive = false;
 	lockScroll();
-}
+} */
 
 
 
@@ -442,27 +450,27 @@ function removeVideo() {
 
 
 // Move left on click
-document.querySelectorAll('.modalLeft')
+/* document.querySelectorAll('.modalLeft')
 	.forEach((modalLeft) => {
 		modalLeft.addEventListener('click', () => {
 			updateActiveImg('left');
 			updateModalText();
 			renderActiveImg();
 		});
-	});
+	}); */
 
 // Move right on click
-document.querySelectorAll('.modalRight')
+/* document.querySelectorAll('.modalRight')
 	.forEach((modalRight) => {
 		modalRight.addEventListener('click', () => {
 			updateActiveImg('right');
 			updateModalText();
 			renderActiveImg();
 		});
-	});
+	}); */
 
 // Move left on Phone click
-document.querySelectorAll('.js-phoneLeft')
+/* document.querySelectorAll('.js-phoneLeft')
 .forEach((phoneLeft) => {
 	phoneLeft.addEventListener('click', () => {
 		const imgMainId = phoneLeft.parentNode.dataset.imgMainContainerId;
@@ -470,9 +478,9 @@ document.querySelectorAll('.js-phoneLeft')
 		updateActiveImgPhone('left');
 		renderActiveImgPhone();
 	});
-});
+}); */
 // Move right on Phone click
-document.querySelectorAll('.js-phoneRight')
+/* document.querySelectorAll('.js-phoneRight')
 .forEach((phoneRight) => {
 	phoneRight.addEventListener('click', () => {
 		const imgMainId = phoneRight.parentNode.dataset.imgMainContainerId;
@@ -480,20 +488,20 @@ document.querySelectorAll('.js-phoneRight')
 		updateActiveImgPhone('right')
 		renderActiveImgPhone();
 	});
-});
+}); */
 
 // Exit modal on click out
-document.querySelectorAll('.modalBG')
+/* document.querySelectorAll('.modalBG')
 	.forEach((modalBG) => {
 		modalBG.addEventListener('click', () => {
 			removeModal();
 			lockScroll();
 		});
-	});
+	}); */
 
 
 // Keydown events
-document.addEventListener('keydown', (event) => {
+/* document.addEventListener('keydown', (event) => {
 	if(isModalActive){
 		if(event.key === 'ArrowRight'){
 			updateActiveImg('right');
@@ -520,7 +528,7 @@ document.addEventListener('keydown', (event) => {
 	}else if (isHelpActive && event.key === 'Escape'){
 		removeHelp();
 	}
-});
+}); */
 
 
 
