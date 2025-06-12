@@ -11,7 +11,7 @@ export const images = [
 	},
 	{
 		fileName: "log_02",
-		imgCount: 10,
+		imgCount: 11,
 		title: "Log_02",
 		heightCm: 40,
 		widthCm: 40,
