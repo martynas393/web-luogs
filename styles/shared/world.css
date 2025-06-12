@@ -1,0 +1,48 @@
+/* WORLD PARAMETERS */
+
+:root{
+	--grey100: hsla(0,0%,0%,1);
+	--grey200: hsla(0,0%,10%,1);
+	--grey300: hsla(0,0%,15%,1);
+	--grey400: hsla(0,0%,20%,1);
+	--grey500: hsla(0,0%,30%,1);
+	--grey600: hsla(0,0%,35%,1);
+	--grey700: hsla(0,0%,40%,1);
+	--grey800: hsla(0,0%,70%,1);
+	--grey850: hsla(0,0%,85%,1);
+	--grey900: hsla(0,0%,90%,1);
+	
+	--bgcolor: hsla(0,0%,85%,1);
+	--accent: #2c25ff;
+
+	--linewidth: 1.5px;
+	/* --linecolor: hsla(0,0%,35%,1); */
+	--linecolor: hsla(0,0%,95%,1);
+
+	--cursorPointer: pointer;
+	--cursorLeft: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='36px' height='36px' stroke-width='1.5' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' color='%23e6e6e6'%3E%3Cpath d='M15 6L9 12L15 18' stroke='%23e6e6e6' stroke-width='1.5'%3E%3C/path%3E%3C/svg%3E")18 18, pointer;
+	--cursorRight: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='36px' height='36px' stroke-width='1.5' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' color='%23e6e6e6'%3E%3Cpath d='M9 6L15 12L9 18' stroke='%23e6e6e6' stroke-width='1.5'%3E%3C/path%3E%3C/svg%3E")18 18, pointer;
+	--cursorClose: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='30px' height='30px' stroke-width='1.5' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' color='%23e6e6e6'%3E%3Cpath d='M6.75827 17.2426L12.0009 12M17.2435 6.75736L12.0009 12M12.0009 12L6.75827 6.75736M12.0009 12L17.2435 17.2426' stroke='%23e6e6e6' stroke-width='1.5' %3E%3C/path%3E%3C/svg%3E")15 15, pointer;
+
+	/* --cursorPointer: url("../../favicon/chainsaw.png"), auto; */
+}
+
+@font-face {
+    font-family: 'rewalt';
+    src: url('../../fonts/rewalt_medium_macroman/rewalt-medium-webfont.woff2') format('woff2'),
+         url('../../fonts/rewalt_medium_macroman/rewalt-medium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html{
+	background-color: var(--bgcolor);
+	font-family: 'rewalt';
+	/* scrollbar-color: var(--grey300) var(--grey100); */
+	scroll-snap-type: y proximity;
+	-webkit-overflow-scrolling: touch;
+}
+body{
+	padding: 0;
+	margin: 0;
+}
