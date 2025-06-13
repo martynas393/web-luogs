@@ -1,0 +1,151 @@
+.content{
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	height: auto;
+}
+
+/* modal */
+.modal{
+	display: flex;
+  	position: relative;
+	flex: 1;
+}
+	.modal-left, .modal-right{
+		display: flex;
+		position: absolute;
+		height: 100%;
+		width: 50%;
+		justify-content: center;
+		align-items: center;
+		box-sizing: border-box;
+	}
+	.modal-left{
+		left: 0;
+		border-right: var(--linewidth) solid var(--linecolor);
+		/* background-color: var(--bgcolor); */
+	}
+		.modal-text{
+			position: relative;
+			height: 50%;
+			width: 50%;
+			/* border: var(--linewidth) solid var(--linecolor); */
+			height: auto;
+			width: 430px;
+			margin: 40px 20px;
+			color: var(--textcolor);
+		}
+			.modal-text-line{
+				padding: 10px;
+			}
+				.availability{
+					font-style: italic;
+					color: var(--grey700);
+				}
+	.modal-right{
+		right: 0;
+	}
+		.modal-img{
+			height: 100%;
+			width: 100%;
+		}
+			.picture{
+				display: none;
+			}
+				.modal-img img{
+					position: absolute;
+					height: 100%;
+					width: 100%;
+					object-fit: cover;
+					user-select: none;
+				}
+
+	.display-flex{
+		display: flex;
+	}
+
+	/* modal overlay */
+	.modal-overlay{
+		display: flex;
+		position: absolute;
+		flex-direction: column;
+		height: 100%;
+		width: 100%;
+		z-index: 1;
+		/* background-color: #2c25ff; */
+	}
+		/* thubnails */
+		.modal-thubnails{
+			position: relative;
+			display: flex;
+		}
+			.modal-thubnail{
+				height: 100px;
+				width: 75px;
+				border: var(--linewidth) solid var(--linecolor);
+			}
+			
+		/* modal ctrl */
+		.modal-ctrl{
+			position: relative;
+			display: flex;
+			flex: 1;
+			/* background-color: rgb(158, 158, 43); */
+		}
+			.modal-ctrl-left, .modal-ctrl-right, .group-ctrl-left, .group-ctrl-right{
+				display: flex;
+				align-items: center;
+				box-sizing: border-box;
+				width: 50%;
+				height: 100%;
+				cursor: var(--cursorPointer);
+				/* border: var(--linewidth) solid red; */
+				/* background-color: #2c25ff; */
+			}
+			.modal-ctrl-left, .group-ctrl-left{
+				left: 0;
+				justify-content: baseline;
+			}
+			.modal-ctrl-right, .group-ctrl-right{
+				right: 0;
+				justify-content: end;
+			}
+				.symbol-left, .symbol-right{
+					stroke: var(--grey700);
+					stroke-width: 2;
+					user-select: none;
+					height: 30px;
+					margin: 2vw;
+				}
+				.modal-ctrl-left:hover .symbol-left, .modal-ctrl-right:hover .symbol-right, .group-ctrl-left:hover .symbol-left, .group-ctrl-right:hover .symbol-right{
+					stroke: var(--grey900);
+				}
+
+@media screen and (max-width: 974px){
+
+	/* .content{
+		min-height: 100vh;
+		height: auto;
+	} */
+	.modal{
+		flex-direction: column-reverse;
+		flex: none;
+	}
+	.modal-left, .modal-right{
+		position: relative;
+		width: 100%;
+	}
+	.modal-left{
+		border-right: none;
+		border-top: var(--linewidth) solid var(--linecolor);
+	}
+	.modal-right{
+		height: fit-content;
+		aspect-ratio: 3/4;
+	}
+	.modal-text{
+		height: auto;
+		width: 100%;
+		margin: 40px 20px;
+	}
+}
