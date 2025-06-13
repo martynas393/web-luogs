@@ -32,7 +32,10 @@ function generateContent () {
 			<a href="modal.html">
 				<div class="element-text">
 					<div class="el-text-tl">${title}</div>
-					<div class="el-text-tr">H ${heightCm}, W ${widthCm}</div>
+					<div class="el-text-tr">
+						<div class="el-text-line">H ${heightCm}</div>
+						<div class="el-text-line">W ${widthCm}</div>
+					</div>
 					<div class="el-text-bl">${treatment}</div>
 					<div class="el-text-br">${availability}</div>
 				</div>
@@ -43,10 +46,17 @@ function generateContent () {
 				</div>
 				-->
 
+				<!--
 				<picture class="element-img">
 					<source srcset="images/${fileName}/${fileName}-0.avif" width="600" height="900" type="image/avif">
 					<img src="images/${fileName}/${fileName}-0.jpg" width="600" height="900" type="image/jpeg">
 				</picture>
+				-->
+
+				<div class="element-img">
+					<img width="600" height="900" src="images/${fileName}/${fileName}-0.png">
+				</div>
+
 			</a>
 		</div>
 		`

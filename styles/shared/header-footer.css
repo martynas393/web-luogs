@@ -11,9 +11,9 @@
 	z-index: 2;
 }
 	.header-text, .footer-text{
-		color: var(--grey100);
+		color: var(--textcolor);
 		font-size: 16px;
-		text-transform: uppercase;
+		/* text-transform: uppercase; */
 		padding: 20px;
 		user-select: none;
 	}
@@ -21,7 +21,7 @@
 		cursor: var(--cursorPointer);
 	}
 	.header-text:hover{
-		color: var(--grey700);
+		color: var(--texthovercolor);
 	}
 		.header a{
 			color: inherit;

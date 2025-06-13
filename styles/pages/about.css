@@ -16,7 +16,7 @@
 }
 	.about-text{
 		max-width: 430px;padding: 20px;
-		
+		color: var(--textcolor);
 	}
 		.about-text-line{
 			padding: 10px 0;
@@ -30,7 +30,7 @@
 			text-decoration: underline;
 		}
 		.about-email-button:hover{
-			color: var(--accent);
+			color: var(--texthovercolor);
 			cursor: var(--cursorPointer);
 		}
 		.about-email-alert{

@@ -33,10 +33,15 @@
 			height: auto;
 			width: 430px;
 			margin: 40px 20px;
+			color: var(--textcolor);
 		}
 			.modal-text-line{
 				padding: 10px;
 			}
+				.availability{
+					font-style: italic;
+					color: var(--grey700);
+				}
 	.modal-right{
 		right: 0;
 	}

@@ -54,9 +54,9 @@ function generateModalContent(activeGroup) {
             <div class="modal-text">
                 <div class="modal-text-line">${title}</div>
                 <div class="modal-text-line">${treatment}</div>
-                <div class="modal-text-line">Dimensions: H : ${heightCm}cm, W : ${widthCm}cm</div>
                 <div class="modal-text-line">${description}</div>
-                <div class="modal-text-line">${availability}</div>
+                <div class="modal-text-line">Dimensions: H ${heightCm}cm, W ${widthCm}cm</div>
+                <div class="modal-text-line availability">${availability}</div>
 
             </div>
         </div>

@@ -6,6 +6,8 @@ document.querySelector('.js-email')
 		const email = document.querySelector('.js-email').innerHTML
 		await navigator.clipboard.writeText(email)
 
+		console.log('1');
+
 		clearInterval(emailAlert);
 		document.querySelector('.js-alert')
 		.classList.add('display-flex');
